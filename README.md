@@ -1,0 +1,2 @@
+# ocpmirror
+openshift mirror
