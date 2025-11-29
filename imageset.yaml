@@ -115,16 +115,12 @@ mirror:
        - name: tempo-product
          channels:
          - name: stable
-       - name: 3scale-operator
-         channels: [{name: "threescale-2.13"}]
        - name: advanced-cluster-management
          channels: [{name: "release-2.14"}]
        - name: amq-broker-rhel8
          channels: [{name: "7.12.x"}]
        - name: amq-broker-rhel9
          channels: [{name: "7.13.x"}]
-       - name: cephcsi-operator
-         channels: [{name: "stable-4.20"}]
        - name: cluster-kube-descheduler-operator
          channels: [{name: "stable"}]
        - name: cluster-logging
@@ -155,8 +151,6 @@ mirror:
          channels: [{name: "stable"}]
        - name: loki-operator
          channels: [{name: "stable-6.4"}]
-       - name: lvms-operator
-         channels: [{name: "stable-4.20"}]
        - name: metallb-operator
          channels: [{name: "stable"}]
        - name: mtv-operator
@@ -181,8 +175,6 @@ mirror:
          channels: [{name: "stable-4.20"}]
        - name: odf-multicluster-orchestrator
          channels: [{name: "stable-4.20"}]
-       - name: odf-operator
-         channels: [{name: "stable-4.20"}]
        - name: odf-prometheus-operator
          channels: [{name: "stable-4.20"}]
        - name: openshift-builds-operator
@@ -191,8 +183,6 @@ mirror:
          channels: [{name: "stable-v1"}]
        - name: openshift-custom-metrics-autoscaler-operator
          channels: [{name: "stable"}]
-       - name: openshift-external-secrets-operator
-         channels: [{name: "stable-v1"}]
        - name: openshift-gitops-operator
          channels: [{name: "latest"}]
        - name: openshift-pipelines-operator-rh
@@ -229,5 +219,3 @@ mirror:
   additionalImages:
     - name: registry.redhat.io/ubi8/ubi:latest
     - name: registry.redhat.io/rhel8/support-tools
-    - name: docker.io/netapp/trident:25.10.0
-    - name: docker.io/netapp/trident-autosupport:25.10.0
