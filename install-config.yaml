@@ -1,0 +1,61 @@
+additionalTrustBundlePolicy: Proxyonly
+apiVersion: v1
+baseDomain: abc.co.in
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 0
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: upi-uat
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostprefix: 23
+  networkType: OVNKubernetes
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  vsphere:
+   failureDomains:
+   - name: generated-failure-domain
+     region: generated-region
+     server: drcvcenter-pr.abc.co.in
+     topology:
+      computeCluster: /drcvcenter-pr.ABC.co.in/ABC-DRC/ABC-PROD-DRC02
+      datacenter: ABC-DRC
+      datastore: /drcvcenter-pr.ABC.co.in/dr_app_dstore/dr_app_dstore02
+      networks:
+      - VLAN-8
+      folder: /drcventer-pr.ABC.co.in/ABC-DRC/UPI-UAT
+     zone: generated-zone
+   vcenters:
+   - datacenters:
+     - ABC-DRC
+     password: *******
+     port: 443
+     server: drcvcenter-pr.ABC.co.in
+     user: administrator@vsphere.local
+   diskType: thin
+fips: false
+sshKey: 'Ssh-rsa ABC123 ********'
+pullSecret: << complete pull secret>>
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+  -----END CERTIFICATE-----
+imageContentSources:
+- mirrors:
+  - bastion.upi-uat.abc.co.in:8443/openshift/release
+  source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+- mirrors:
+  - bastion.upi-uat.abc.co.in:8443/openshift/release-images
+  source: quay.io/openshift-release-dev/ocp-releases
